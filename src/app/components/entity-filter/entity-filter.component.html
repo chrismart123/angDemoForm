@@ -1,0 +1,19 @@
+<div class="col-md-12">
+    <div class="boxRelationship">
+        <div class="buttonHeaders">
+            <button 
+                class="btn darkBlue" 
+                (click)="entityChange($event)">{{model?.relationship?.name}}
+            </button>
+            <ul>
+                <li *ngFor="let child of model?.relationship?.children">
+                    <button
+                    (click)="entityChange($event)"
+                    class="btn childBtn">{{child?.name}}</button>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+            
+        </div>
+    </div>
+</div>

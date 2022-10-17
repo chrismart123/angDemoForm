@@ -1,0 +1,10 @@
+{
+    "relationship":{
+        "name": "Alpha Consult",
+        "children": [
+            { "name": "Client 1"},
+            { "name": "Client 2"}
+        ]
+    }
+    
+}

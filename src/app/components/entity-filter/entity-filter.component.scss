@@ -1,0 +1,42 @@
+.boxRelationship{
+    padding: 30px;
+    margin: 10px;
+    border: 1px solid #e7e7e7;
+    .buttonHeaders{
+        position: relative;
+        display: inline-block;
+        ul{ 
+            padding: 0;
+            margin: 0;
+            float:left;
+            position: relative;
+            li{ 
+                list-style: none; 
+                float:left
+            } 
+        }
+        .btn{
+            margin: 0 5px;
+        }
+        .btn:focus{
+            box-shadow: none;
+        }
+        .darkBlue{
+            background-color: darkblue;
+            color:white;
+            font-weight: bold;
+            float:left;
+            margin-right: 20px;
+        }
+        .childBtn{
+            background-color: transparent;
+            color:grey
+            
+        }
+        .childBtn:target,
+        .childBtn:focus{
+            border:1px solid grey;
+            outline: none;
+        }
+    }
+}

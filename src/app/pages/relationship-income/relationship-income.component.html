@@ -1,0 +1,69 @@
+<app-header></app-header>
+<div class="row">
+    <div class="col-md-3 text-center" *ngFor="let data of relationshipData">
+        <div class="boxRelationshipHeader">
+            <h3>{{data.header}}</h3>
+            <div class="clearfix"></div>
+            <span>{{numberWithCommas(data.value)}}</span>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <br>
+    <app-entity-filter [inputData]="model"></app-entity-filter>
+    <div class="col-md-12 ">
+        <div class="boxRelationshipTable">
+            <table class="table text-center table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"><input type="checkbox"></th>
+                        <th scope="col" class="text-left">Category</th>
+                        <th scope="col">Revenue</th>
+                        <th scope="col">2020<br>ROE</th>
+                        <th scope="col">Revenue</th>
+                        <th scope="col">YTD<br>ROE</th>
+                        <th scope="col">Revenue</th>
+                        <th scope="col">2021<br>ROE</th>
+                        <th scope="col">Revenue</th>
+                        <th scope="col">2022<br>ROE</th>
+                        <th scope="col">Revenue</th>
+                        <th scope="col">Lifetime<br>ROE</th>
+                    </tr>
+                </thead>
+            
+                <tbody>
+                    <tr *ngFor="let dataRow of relationDataArray">
+                        <td scope="row"><input type="checkbox"></td>
+                        <td>{{dataRow.groupLabel}}</td>
+                        <td>{{checkPeriods(dataRow.periods,'2020','revenue')}}</td>  
+                        <td>{{checkPeriods(dataRow.periods,'2020','roe')}}</td>
+                        <td>{{checkPeriods(dataRow.periods,'2021','revenue')}}</td>
+                        <td>{{checkPeriods(dataRow.periods,'2021','roe')}}</td>
+                        <td>{{checkPeriods(dataRow.periods,'2021forecast','revenue')}}</td>
+                        <td>{{checkPeriods(dataRow.periods,'2021forecast','roe')}}</td>
+                        <td>{{checkPeriods(dataRow.periods,'2022forecast','revenue')}}</td>
+                        <td>{{checkPeriods(dataRow.periods,'2022forecast','roe')}}</td>
+                        <td>{{checkPeriods(dataRow.periods,'lifetime','revenue')}}</td>
+                        <td>{{checkPeriods(dataRow.periods,'lifetime','roe')}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <td scope="row"></td>
+                    <td>Total</td>
+                    <td>{{checkPeriods(relationshipTotal,'2020','revenue')}}</td>  
+                    <td>{{checkPeriods(relationshipTotal,'2020','roe')}}</td>
+                    <td>{{checkPeriods(relationshipTotal,'2021','revenue')}}</td>
+                    <td>{{checkPeriods(relationshipTotal,'2021','roe')}}</td>
+                    <td>{{checkPeriods(relationshipTotal,'2021forecast','revenue')}}</td>
+                    <td>{{checkPeriods(relationshipTotal,'2021forecast','roe')}}</td>
+                    <td>{{checkPeriods(relationshipTotal,'2022forecast','revenue')}}</td>
+                    <td>{{checkPeriods(relationshipTotal,'2022forecast','roe')}}</td>
+                    <td>{{checkPeriods(relationshipTotal,'lifetime','revenue')}}</td>
+                    <td>{{checkPeriods(relationshipTotal,'lifetime','roe')}}</td>
+                </tfoot>
+            </table>
+            <br>
+
+        </div>
+
+    </div>
+</div>
